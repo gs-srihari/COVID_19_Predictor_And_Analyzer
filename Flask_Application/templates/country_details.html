@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <title>For loop in Flask</title>
+    <link href="./style.css" rel="stylesheet" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background: #ff3772;
+        font-family: sans-serif;
+      }
+
+      ul {
+        position: relative;
+        width: 750px;
+        margin: 100px auto 0;
+        padding: 10px;
+        box-sizing: border-box;
+        background: rgba(0, 0, 0, 0.1);
+        /* box-shadow: inset 0 0 15px rgba(0,0,0,.5); */
+        border-radius: 5px;
+        overflow: hidden;
+      }
+      p{
+        position: relative;
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+
+      ul li {
+        display: flex;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 10px 20px;
+        color: #fff;
+        margin: 5px 0;
+        transition: 0.5s;
+      }
+      ul li span:nth-child(1) {
+        width: 30px;
+      }
+
+      ul li a {
+        padding: 10px 20px;
+        color: #fff;
+        text-decoration: none;
+      }
+      ul li:hover {
+        transform: scale(1.06);
+        background: #ff3772;
+      }
+    </style>
+  </head>
+  <body>
+   
+      <div>
+        <img src="{{profilepic_filename}}"class="center" style="width:auto ; height:auto"/>
+        <img src="{{legend}}" class="center" style="margin-left: 60%;width:auto ; height:autos"/>
+
+        <br />
+
+        <p class="center " style="color:#fff ; font-family : Pathway Gothic One ; font-size: larger;">Predictions made as of 5th May 2020</p>
+    <ul>
+        <li>News and Related Articles related to the searched country</li>
+        <!-- For loop logic of jinja template -->
+      {%for i in range(0, len)%}
+      <li>
+        <span class="number">{{i+1}}</span>
+        <span class="name"><a href="{{links[i]}}">{{headlines[i]}}</a></span>
+      </li>
+      {%endfor%}
+    </ul>
+  </body>
+</html>

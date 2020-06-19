@@ -1,0 +1,14 @@
+body
+{
+    margin:0;
+    padding:0;
+    background:yellow;
+    font-family: sans-serif;
+
+}
+ul
+{
+    position:absolute;
+    width:450px;
+    margin: 100px auto 0;
+}
